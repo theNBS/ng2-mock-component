@@ -1,3 +1,4 @@
+/* tslint:disable:linebreak-style*/
 import { Component, EventEmitter } from '@angular/core';
 
 /**
