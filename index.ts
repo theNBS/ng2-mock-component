@@ -8,19 +8,19 @@ import { Component, EventEmitter } from '@angular/core';
  * See https://angular.io/docs/ts/latest/api/core/index/Component-decorator.html for a list
  * of supported properties.
  */
-
+/* tslint:disable-next-line */
 export function MockComponent(options: Component): Component {
 
   const metadata: Component = {
     selector: options.selector,
     template: options.template || '',
     inputs: options.inputs,
-    outputs: options.outputs || []
+    outputs: options.outputs || [],
   };
 
   class Mock {}
 
-  metadata.outputs.forEach(method => {
+  metadata.outputs.forEach((method) => {
     Mock.prototype[method] = new EventEmitter<any>();
   });
 
